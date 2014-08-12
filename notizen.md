@@ -4,10 +4,14 @@ TODO: für jeden Punkt ein Beispiel!
 
 * Was ist ein Link?
     * Beispiele von (impliziten) Links
+        * Bild mit Allegorie/Anspielung/verstecktem Zitat
         * Verwandtschaftsbeziehung
-        * Zitation (in verschiedenen Formen)
-        * Zitat
         * Verschlagwortung
+        * Zitat
+        * Zitation (in verschiedenen Formen): konkreter Link,
+          allerdings schwierig maschinell zu verarbeiten
+            * Siehe TBL 1992: directly follow hyperlinks
+            * Zitation mit Identifier
 
 * Warum sind Links sinnvoll?
     * Verbindung herstellen
@@ -30,6 +34,7 @@ TODO: für jeden Punkt ein Beispiel!
             2. es gibt ein zweites ("Ziel")
             3. es gibt etwas drittes ("Verbindung") das mit 
                beiden zusammen hängt
+    * Maschinell verarbeitbar und eindeutig mittels Identifiern
     * Verbindung kann wieder ein etwas sein (endlose treppe!)
     * Achtung: Verbindung ist nicht RDF-Property!
 
