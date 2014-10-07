@@ -1,3 +1,16 @@
+Impulsreferat: Linked Open Data in Bibliotheken, Archiven und Museen 
+
+*Was bedeutet “linked”? Warum sollten Daten möglichst viele explizite Verknüpfungen enthalten? Wie lassen sich solche Verknüpfungen durch Linked Open Data ausdrücken? Welche Schwierigkeiten und Alternativen existieren? Was können wir tun, um verknüpfte Daten sinnvoll zu nutzen und nutzbar zu machen?*
+
+09:45-10:15 (danach zweites Impulsreferat)
+
+Mögliche Fragen:
+
+* Linked vs. nicht linked data
+* Potential für Bibliotheken/Archive/Museen
+* Wie wird sich katalogisierung in Zukunft mit Hilfe von LOD verändern?
+
+----
 TODO: für jeden Punkt ein Beispiel!
 
 ## Warum Links?
