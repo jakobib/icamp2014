@@ -89,7 +89,9 @@ $endif$
       \includegraphics[width=\paperwidth,height=\paperheight]{vzg-slides-background.png}
     };
     \node[anchor=south,text=white,yshift=0.5mm] at (current page.south) 
-        {\footnotesize $title$ $if(date)$($date$)$endif$};
+        {\footnotesize 
+            $if(shorttitle)$$shorttitle$$else$$title$$endif$$if(date)$, $date$$endif$
+        };
     \node[anchor=east,text=white,yshift=-31.5mm] at (current page.east) 
         {\scriptsize \insertframenumber};
   \end{tikzpicture}

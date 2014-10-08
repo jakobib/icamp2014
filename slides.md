@@ -1,5 +1,6 @@
 ---
 title: Linked Open Data in Bibliotheken, Archiven & Museen
+shorttitle: LOD in Bibliotheken, Archiven & Museen
 author: Jakob Voß
 date: 2014-10-10
 place: Infocamp, Chur
@@ -24,11 +25,14 @@ institute: Verbunzentrale des GBV (VZG)
 
 * Zum Beispiele **die gleiche Person**
     * Person als Autor in Katalogdatenbank
-    * Museumsobjekte der Person im Bestandsverzeichnis
+    * Objekte der Person im Bestandsverzeichnis eines Museums
     * Wikipedia-Artikel über die Person
     * ...
 
-# Old School Linked Data: authority files
+*Linked Open Data ist überall relevant, wo in verschiedenen Einrichtungen Daten
+über gleiche Dinge verwaltet werden*
+
+# Old School Linked (Open) Data: authority files
 
 Normdaten
   : Personenverzeichnis, Klassifikation, Thesaurus...
@@ -58,7 +62,7 @@ $\Rightarrow$ Linked Open Data
 1. **Data**
 
     Daten in RDF
-    
+
     HTTP-URIs als Identifier
 
 2. **Open**
@@ -73,8 +77,8 @@ $\Rightarrow$ Linked Open Data
 
 ![](gnd-beispiel.png)
 
-# Beispiel: <http://d-nb.info/gnd/118578545>
-
+# Beispiel: <http://d-nb.info/gnd/118578545>^[<http://www.easyrdf.org/converter>]
+ 
 ```
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gnd: <http://d-nb.info/standards/elementset/gnd#> .
@@ -92,15 +96,23 @@ $\Rightarrow$ Linked Open Data
   gnd:preferredNameForTheSubjectHeading "Künstler" .
 ```
 
-# RDF in a Nutshell
+# Daten in RDF
 
 * Alle Dinge werden mit einer URI identifiziert\
-  (z.B. <http://d-nb.info/gnd/11857854>)
-* Alle Daten bestehen aus einzelnen Aussagen (Triples)
+* Alle Daten bestehen aus einzelnen Aussagen (**Triples**)
     * Subjekt (immer eine URI)^[abgesehen von blank nodes]
     * Property (Eigenschaft identifiert durch eine URI)
-    * Objekt (Zeichenkette oder URI)$^1$
+    * Objekt (Zeichenkette oder URI)$^2$
 
+Beispiel:
+
+S
+  : <http://d-nb.info/gnd/11857854>
+P
+  : <http://d-nb.info/standards/elementset/gnd#>\
+    `professionOrOccupation`
+O
+  : <http://d-nb.info/gnd/4033423-5>
 
 # Ontologien
 
@@ -113,72 +125,24 @@ $\Rightarrow$ Linked Open Data
     * `schema:name` (<http://schema.org/name>)
     * ...
 
-* Katalogisierung mit RDA basiert auf einer RDF-Ontologie,
+* z.B.Katalogisierung mit RDA basiert auf einer RDF-Ontologie,
   andere Datenmodelle lassen sich auf Ontologien abbilden
 
-* Ontologien sind mischbar
+* Ontologien sind allerdings auch mischbar!
 
 
-# Vorteile
+# Katalogisierung: Intellektuelle Erstellung von Daten
 
-* Einheitliches Datenformat
-* Verfügbarkeit der Daten
-* Flexibleres Zusammenführen und Ausschnitte bilden
+1. Zeichenketten oder andere Digitalisate
+2. Verknüpfungen
 
-$\Rightarrow$ Mehrwert durch *Zusammenarbeit*
-
-# LOD macht keinen Sinn wenn...
-
-* Niemand anderes die eigenen Daten nutzen soll
-* Alle Daten selber erfasst und genutzt werden
-* Anwendungsmöglichkeiten begrenzt sind 
-* Alle unter sich bleiben wollen
-
-$\Rightarrow$ Zusammenarbeit nicht gewünscht ist
-
-
-# Linked Open Data in der Praxis
-
-* Massenweise Links als RDF-Daten
-    * Bereitstellung von URIs zum Verknüpfen
-    * Bereitstellung von Verknüpfungen
-        * Eigene URIs
-        * Mit URIs anderer Datenbanken
-        * In RDF das Gleiche
-    * zum direkten Abruf und als Dumps
-* Ggf. reichen auch andere Formate\
-  (CSV-Datei, BEACON...)
-
-
-# Linking Open Data cloud diagram
-
-![](lod-cloud.png)
-
-
-# Einige Beispiele
-
-<!-- TODO: Potential für Bibliotheken/Archive/Museen -->
-
-* Deutsche Nationalbibliothek
-* Universität Münster
-* Oslo Public Library
-* ...
-
-
-# Katalogisierung mit LOD
-
-<!-- Wie wird sich katalogisierung in Zukunft mit Hilfe von LOD verändern? -->
-
-Erstellung von Daten:
-
-* Zeichenketten oder andere Digitalisate
-* Verknüpfungen
 
 # Zeichenketten oder andere Digitalisate
 
 ![](minnesang.png)
 
-*Nur genau einmal notwendig, danach Verknüpfungen*
+*nur genau einmal notwendig, danach Verknüpfungen*
+
 
 # Verknüpfungen
 
@@ -187,20 +151,62 @@ Erstellung von Daten:
 
 ![](suggest_wikipedia_en.png)
 
+
+# Vor- & Nachteile
+
+* Vorteile
+
+    * Einheitliches Datenformat
+    * Verfügbarkeit der Daten
+    * Flexibleres Zusammenführen und Ausschnitte bilden
+
+    $\Rightarrow$ Mehrwert durch *Zusammenarbeit*
+
+* LOD macht keinen Sinn wenn...
+
+    * Alle Daten selber erfasst und genutzt werden sollen
+
+    $\Rightarrow$ Zusammenarbeit nicht gewünscht ist
+
+
+# Konzeptuelle Nachteile
+
+* Nicht alle Daten lassen sich gleich gut in RDF ausdrücken\
+  (z.B. Hierarchien, Reihenfolgen...)
+* Datenmodellierung ist kompliziert\
+  weil die Dinge kompliziert sind
+
+Ggf. reichen auch erstmal andere Formate, sofern URIs dabei sind
+(CSV-Tabellen, BEACON-Linkdumps...)
+
+
 # Zusammenfassung
 
-* Alles lässt sich mit allem verknüpfen, wenn URIs da sind
-* Tripel als kleinste Dateneinheit, leichte Nachnutzung und Zusammenführung
-* Bitte URIs und Ontologien weiterverwenden!
+* Alles lässt sich mit allem verknüpfen (mittels URIs)
+* Katalogisierung ist Verknüpfung oder Digitalisierung
+* Tripel als kleinste Dateneinheit
+    * leichte Nachnutzung und Zusammenführung
+    * Gemeinsame Nutzung von RDF-Eigenschaften & Ontologien
+* Massenweise Verknüpfungen
 
-# Quellen, Hilsfmittel und Lizenz
 
-* Linking Open Data cloud diagram 2014, by Max Schmachtenberg, Christian Bizer,
-  Anja Jentzsch and Richard Cyganiak. http://lod-cloud.net/ 
+# Linking Open Data cloud diagram
 
-* RDF per HTTP-URI abrufen
-      * <http://www.easyrdf.org/converter>
-      * `catmandu convert RDF --url http://d-nb.info/gnd/118578545 to YAML`
+![](lod-cloud.png)
+
+
+# Weiterführendes, Quellen und Lizenz
+
+SWIB
+  : Semantic Web in Libraries (seit 2009)\
+    <http://swib.org/>
+
+LODLAM
+  : Linked Open Data in Libraries, Archives, and Museums (seit 2011)\
+    <http://lodlam.net>
+
+*Linking Open Data cloud diagram* (2014) by Max Schmachtenberg, Christian Bizer,
+Anja Jentzsch and Richard Cyganiak <http://lod-cloud.net/> 
 
 ![](cc-by-sa.png)
 
